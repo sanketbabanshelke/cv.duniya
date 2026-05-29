@@ -1,0 +1,339 @@
+/* १. फॉन्ट आणि रिसेट */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+/* २. हेडर */
+.main-header {
+    background: #111827;
+    color: white;
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo { width: 35px; border-radius: 5px; }
+
+/* ३. लेआउट */
+.container {
+    display: flex;
+    max-width: 1300px;
+    margin: 30px auto;
+    gap: 30px;
+    padding: 0 20px;
+}
+
+/* ४. फॉर्म विभाग (डावी बाजू) */
+.form {
+    flex: 1;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 20px;
+    height: 90vh;
+    overflow-y: auto;
+}
+
+.form h2 {
+    margin-bottom: 15px;
+    color: #2563eb;
+    border-bottom: 2px solid #2563eb;
+    display: inline-block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    
+}
+
+textarea { height: 70px; resize: none; }
+
+/* ५. रिझ्युमे प्रिव्ह्यू (A4 लूक) */
+.resume {
+    flex: 1.2;
+    background: white;
+    padding: 50px;
+    min-height: 29.7cm;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    text-transform: capitalize;
+}
+
+#r-name { font-size: 32px; font-weight: 800; color: #111827; text-transform: uppercase; }
+#r-jobtitle { font-size: 18px; color: #2563eb; margin-bottom: 10px;  text-transform: uppercase;}
+
+hr { border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0; }
+
+h3 {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #374151;
+    background: #f9fafb;
+    padding: 5px 10px;
+    border-left: 4px solid #2563eb;
+    margin-bottom: 10px;
+}
+
+/* ६. बटण स्टाईल्स */
+button {
+    cursor: pointer;
+    border: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+button[onclick="generateResume()"] {
+    width: 100%;
+    background: #2563eb;
+    color: white;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+button[onclick="downloadPDF()"] {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #0bf460;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 10px 20px rgba(16, 185, 129, 0.4);
+}
+
+button:hover { opacity: 0.9; transform: translateY(-2px); }
+
+/* मोबाईलसाठी */
+@media (max-width: 900px) {
+    .container { flex-direction: column; }
+    .form { position: static; height: auto; }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, #111827 0%, #1f2937 100%);
+    color: rgb(20, 16, 16);
+    padding: 100px 5%;
+    text-align: center;
+    border-bottom: 4px solid #2563eb;
+}
+
+.hero-container {
+    background: #111827;
+    color: rgb(239, 232, 232);
+    padding: 15px 5%;
+    box-shadow: 0 2px 10px rgba(31, 27, 27, 0.2);
+}
+.hero h2 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.highlight {
+    color: #3b82f6; /* Electric Blue */
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #9ca3af;
+    margin-bottom: 40px;
+}
+
+/* Call to Action Button */
+.cta-button {
+    display: inline-block;
+    background: #2563eb;
+    color: white;
+    padding: 18px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+}
+
+.cta-button:hover {
+    background: #1d4ed8;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(37, 99, 235, 0.4);
+}
+/* Features Section */
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 80px 10%;
+    background: #acb2b9;
+}
+
+.feature-card {
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(22, 27, 29, 0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #e5e7eb;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    border-color: #2563eb;
+}
+
+.feature-card h3 {
+    color: #111827;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+footer {
+    background: #111827;
+    color: #9ca3af;
+    text-align: center;
+    padding: 40px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #374151;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero {
+        padding: 60px 5%;
+    }
+}
+/* --- About Section Styling --- */
+.about {
+    padding: 100px 10%;
+    background-color: #ffffff;
+}
+
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-subtitle {
+    color: #2563eb;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.85rem;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.about-content {
+    flex: 1;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #0f172a;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: #64748b;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+/* Stats List */
+.stats-grid {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.stats-grid li {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats-grid li strong {
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+.stats-grid li span {
+    color: #1e293b;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+/* About Visual Section */
+.about-visual {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    background: #f1f5f9;
+    padding: 50px;
+    border-radius: 30px;
+}
+
+.resume-mini-preview {
+    width: 200px;
+    height: 280px;
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.line {
+    background: #e2e8f0;
+    height: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+}
+
+.header-line { width: 100%; height: 12px; background: #2563eb; }
+.short-line { width: 60%; }
+.body-line { width: 100%; }
+
+/* Mobile View */
+@media (max-width: 900px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
