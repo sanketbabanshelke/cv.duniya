@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CV.DUNIYA</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <header class="main-header">
+    <div class="header-content">
+        <img src="cv.logo.png" alt="CV.DUNIYA Logo" class="logo">
+        <h1 class="site-title">CV.DUNIYA</h1>
+    </div>
+    </header>
+
+
+    <div class="container">
+
+    <!-- Form Section -->
+    <div class="form">
+        <h2>Enter Your Details</h2>
+
+        <input type="text" id="name" placeholder="Full Name">
+        <input type="text" id="jobtitle" placeholder="Job Title">
+        <textarea id="summary" placeholder="Summary"></textarea>
+
+        <input type="text" id="location" placeholder="Location">
+        <input type="url" id="linkedin" placeholder="LinkedIn URL">
+
+        <textarea id="experience" placeholder="Experience"></textarea>
+        <textarea id="achievement" placeholder="Achievements"></textarea>
+
+        <input type="email" id="email" placeholder="Email">
+        <input type="text" id="phone" placeholder="Phone Number">
+
+        <textarea id="skills" placeholder="Skills"></textarea>
+        <textarea id="education" placeholder="Education"></textarea>
+         <textarea id="interests" placeholder="Interests"></textarea>
+        <button onclick="generateResume()">Generate Resume</button>
+        
+    </div>
+
+    <!-- Resume Preview -->
+    <div class="resume" id="resume">
+
+        <h2 id="r-name"></h2>
+        <h3 id="r-jobtitle"></h3>
+        <p id="r-location"></p>
+
+        <hr>
+
+        <h4>Contact</h4>
+        <div class="Contact info">
+            <p id="r-email"></p>
+            <p id="r-phone"></p>
+            <p id="r-linkedin"></p>
+        </div>
+        <hr>
+
+        <h3>Summary</h3>
+        <p id="r-summary"></p>
+
+        <hr>
+
+        <h3>Experience</h3>
+        <p id="r-experience"></p>
+
+        <hr>
+
+        <h3>Skills</h3>
+        <p id="r-skills"></p>
+
+        <hr>
+
+        <h3>Education</h3>
+        <p id="r-education"></p>
+
+        <hr>
+
+        <h3>Achievements</h3>
+        <p id="r-achievement"></p>
+
+        <hr>
+
+        <h3>Interests</h3>
+        <p id="r-interests"></p>
+    </div>
+ </div>
+
+<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+<button onclick="downloadPDF()">Download PDF</button>
+
+
+<div>
+    <footer>
+        <p>&copy; 2026 CV.DUNIYA. All rights reserved.</p>
+    </footer>
+</div>
+</body>
+</html>
